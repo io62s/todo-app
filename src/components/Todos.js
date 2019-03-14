@@ -10,19 +10,13 @@ const Todos = ({ todos, deleteTodo, completedTodo, deleteAll }) => {
             <ul className="todo">
               <li>{todo.text}</li>
             </ul>
-            <button
-              className="btn btn-done"
-              onClick={() => completedTodo(todo.id)}
-            >
+            <button onClick={() => completedTodo(todo.id)}>
               <i className="fas fa-check" />
             </button>
-            <button
-              className="btn btn-delete"
-              onClick={() => deleteTodo(todo.id)}
-            >
+            <button onClick={() => deleteTodo(todo.id)}>
               <i className="fas fa-trash-alt" />
             </button>
-            <span className="date">Created: {moment().calendar()}</span>
+            <span>Created: {moment().calendar()}</span>
           </div>
         );
       })
@@ -37,7 +31,9 @@ const Todos = ({ todos, deleteTodo, completedTodo, deleteAll }) => {
           <h3 className="todoH3">No ToDo's</h3>
         )}
         {todos.length > 1 ? (
-          <button className="clr-btn" onClick={() => deleteAll()} />
+          <button onClick={() => deleteAll()}>
+            <i class="far fa-times-circle" />
+          </button>
         ) : null}
         {todo}
       </div>
