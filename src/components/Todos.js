@@ -6,8 +6,8 @@ const Todos = ({ todos, deleteTodo, completedTodo, deleteAll }) => {
   const todo = todos.length
     ? todos.map(todo => {
         return (
-          <div className="todoCard" key={todo.id}>
-            <ul className="todo">
+          <div key={todo.id}>
+            <ul>
               <li>{todo.text}</li>
             </ul>
             <button onClick={() => completedTodo(todo.id)}>
@@ -24,12 +24,8 @@ const Todos = ({ todos, deleteTodo, completedTodo, deleteAll }) => {
 
   return (
     <React.Fragment>
-      <div className="todo-wrapper">
-        {todos.length ? (
-          <h3 className="todoH3">ToDo's</h3>
-        ) : (
-          <h3 className="todoH3">No ToDo's</h3>
-        )}
+      <div>
+        {todos.length ? <h3>ToDo's</h3> : <h3>No ToDo's</h3>}
         {todos.length > 1 ? (
           <button onClick={() => deleteAll()}>
             <i class="far fa-times-circle" />

@@ -4,14 +4,13 @@ const Completed = ({ completed, deleteCompleted, deleteAllDone }) => {
   const completedTodo = completed.length
     ? completed.map(todo => {
         return (
-          <div className="todoCard-comp" key={todo.id}>
-            <ul className="todo-comp">
+          <div key={todo.id}>
+            <ul>
               <li>{todo.text}</li>
             </ul>
-            <button
-              className="btn btn-delete"
-              onClick={() => deleteCompleted(todo.id)}
-            />
+            <button onClick={() => deleteCompleted(todo.id)}>
+              <i className="fas fa-trash-alt" />
+            </button>
           </div>
         );
       })
@@ -19,14 +18,12 @@ const Completed = ({ completed, deleteCompleted, deleteAllDone }) => {
 
   return (
     <React.Fragment>
-      <div className="completed-wrapper">
-        {completed.length ? (
-          <h3 className="todoH3-c">Completed</h3>
-        ) : (
-          <h3 className="todoH3-c">No completed ToDo's</h3>
-        )}
+      <div>
+        {completed.length ? <h3>Completed</h3> : <h3>No completed ToDo's</h3>}
         {completed.length > 1 ? (
-          <button className="clr-btn" onClick={() => deleteAllDone()} />
+          <button onClick={() => deleteAllDone()}>
+            <i class="far fa-times-circle" />
+          </button>
         ) : null}
 
         {completedTodo}

@@ -31,13 +31,12 @@ class AddTodo extends PureComponent {
 
   render() {
     return (
-      <div className="addTodo">
-        <form onSubmit={this.handleSubmit} className="form">
+      <div>
+        <form onSubmit={this.handleSubmit}>
           <input
             ref={input => (this.inputElement = input)}
             value={this.state.text}
             onChange={this.setValue}
-            className="inputTodo"
             type="text"
             placeholder="Enter Task..."
           />
