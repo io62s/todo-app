@@ -1,5 +1,11 @@
 import React from "react";
 import * as Buttons from "./Styles/Buttons";
+import {
+  Heading3,
+  TodoWrapper,
+  TodoContainer,
+  Todo
+} from "./Styles/TodosStyle";
 
 const { RemoveBtn, ClearAllBtn } = Buttons;
 
@@ -7,22 +13,26 @@ const Completed = ({ completed, deleteCompleted, deleteAllDone }) => {
   const completedTodo = completed.length
     ? completed.map(todo => {
         return (
-          <div key={todo.id}>
-            <ul>
+          <TodoContainer key={todo.id}>
+            <Todo>
               <li>{todo.text}</li>
-            </ul>
+            </Todo>
             <RemoveBtn onClick={() => deleteCompleted(todo.id)}>
               <i className="fas fa-trash-alt" />
             </RemoveBtn>
-          </div>
+          </TodoContainer>
         );
       })
     : null;
 
   return (
     <React.Fragment>
-      <div>
-        {completed.length ? <h3>Completed</h3> : <h3>No completed ToDo's</h3>}
+      <TodoWrapper>
+        {completed.length ? (
+          <Heading3>Completed</Heading3>
+        ) : (
+          <Heading3>No completed ToDo's</Heading3>
+        )}
         {completed.length > 1 ? (
           <ClearAllBtn onClick={() => deleteAllDone()}>
             <i class="far fa-times-circle" />
@@ -30,7 +40,7 @@ const Completed = ({ completed, deleteCompleted, deleteAllDone }) => {
         ) : null}
 
         {completedTodo}
-      </div>
+      </TodoWrapper>
     </React.Fragment>
   );
 };

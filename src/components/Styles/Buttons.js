@@ -1,7 +1,15 @@
 import * as colors from "./colors";
 import styled from "styled-components";
 
-const { mainGreen, mainRed, darkGreen, lightGrey } = colors;
+const {
+  mainGreen,
+  mainRed,
+  darkGreen,
+  lightGrey,
+  mainDark,
+  lightDark,
+  neonGreen
+} = colors;
 
 const AddButton = styled.button`
   width: 3rem;
@@ -16,22 +24,31 @@ const AddButton = styled.button`
   background: ${mainGreen};
   color: ${lightGrey};
   cursor: pointer;
-  transition: all 0.3s ease-out;
+  transition: all 0.2s ease-out;
   &:hover {
-    background: ${darkGreen};
+    background: ${neonGreen};
   }
 `;
 
 const CheckedBtn = styled.button`
-  background: none;
+  position: absolute;
+  width: 30px;
+  bottom: -0.8rem;
+  right: 3.7rem;
+  background: transparent;
   outline: none;
   border: none;
+  border-radius: 30px;
+  -moz-outline-radius: 100%;
   font-size: 1.5rem;
-  color: ${lightGrey};
+  color: ${lightDark};
   cursor: pointer;
-  transition: all 0.3s ease-out;
+  transition: all 0.2s ease-out;
   &:hover {
-    color: ${mainGreen};
+    color: ${neonGreen};
+    outline: 2px solid ${neonGreen};
+    outline-offset: 0.2rem;
+    -moz-outline-radius: 100%;
   }
   &:active,
   &:focus {
@@ -41,11 +58,14 @@ const CheckedBtn = styled.button`
 `;
 
 const RemoveBtn = styled.button`
+  position: absolute;
+  bottom: -0.8rem;
+  right: 0.8rem;
   background: none;
   outline: none;
   border: none;
   font-size: 1.5rem;
-  color: ${lightGrey};
+  color: ${lightDark};
   cursor: pointer;
   transition: all 0.3s ease-out;
   &:hover {
@@ -59,6 +79,9 @@ const RemoveBtn = styled.button`
 `;
 
 const ClearAllBtn = styled.button`
+  position: absolute;
+  top: 2rem;
+  right: -4rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -66,7 +89,7 @@ const ClearAllBtn = styled.button`
   outline: none;
   border: none;
   font-size: 1.6rem;
-  color: ${lightGrey};
+  color: ${lightDark};
   cursor: pointer;
   transition: all 0.3s ease-out;
   &:hover {

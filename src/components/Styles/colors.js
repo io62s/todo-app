@@ -1,9 +1,11 @@
 const lightGrey = "#f2f2f2";
+const lightDark = "#BDBDBD";
 const mainDark = "#333";
 const Darkest = "#272727";
 const mainOrange = "#FF9800";
 const mainGreen = "#4CAF50";
 const darkGreen = "#388E3C";
+const neonGreen = "#76FF03";
 const mainRed = "#f44336";
 
 //alt palette
@@ -15,11 +17,13 @@ const darkBluePurple = "#2D142C";
 
 export {
   lightGrey,
+  lightDark,
   mainDark,
   Darkest,
   mainOrange,
   mainGreen,
   darkGreen,
+  neonGreen,
   mainRed,
   lightRed,
   medRed,

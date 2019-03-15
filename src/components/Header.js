@@ -2,7 +2,22 @@ import React from "react";
 import * as colors from "./Styles/colors";
 import styled from "styled-components";
 
-const { lightRed, mainOrange } = colors;
+const {
+  lightGrey,
+  lightDark,
+  mainDark,
+  Darkest,
+  mainOrange,
+  mainGreen,
+  darkGreen,
+  neonGreen,
+  mainRed,
+  lightRed,
+  medRed,
+  medDarkRed,
+  darkBlueRed,
+  darkBluePurple
+} = colors;
 
 const Header = () => {
   return (
@@ -16,9 +31,12 @@ const Heading = styled.div`
   width: 100%;
   text-align: center;
   margin: 0 0 3rem;
-  font-family: "Open Sans", sans-serif;
-  font-size: 0.9rem;
-  color: ${mainOrange};
+  color: ${medRed};
+
+  h1 {
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.5rem;
+  }
 `;
 
 export default Header;
