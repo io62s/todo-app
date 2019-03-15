@@ -2,13 +2,16 @@ import * as colors from "./colors";
 import styled from "styled-components";
 
 const {
-  mainGreen,
-  mainRed,
-  darkGreen,
-  lightGrey,
-  mainDark,
   lightDark,
-  neonGreen
+
+  mainOrange,
+
+  mainGreen,
+
+  neonGreen,
+
+  lightRed,
+  medRed
 } = colors;
 
 const AddButton = styled.button`
@@ -21,8 +24,8 @@ const AddButton = styled.button`
   font-size: 1.3rem;
   outline: none;
   border: none;
-  background: ${mainGreen};
-  color: ${lightGrey};
+  background: ${mainOrange};
+  color: ${medRed};
   cursor: pointer;
   transition: all 0.2s ease-out;
   &:hover {
@@ -33,7 +36,7 @@ const AddButton = styled.button`
 const CheckedBtn = styled.button`
   position: absolute;
   width: 30px;
-  bottom: -0.8rem;
+  bottom: 0.2rem;
   right: 3.7rem;
   background: transparent;
   outline: none;
@@ -45,10 +48,7 @@ const CheckedBtn = styled.button`
   cursor: pointer;
   transition: all 0.2s ease-out;
   &:hover {
-    color: ${neonGreen};
-    outline: 2px solid ${neonGreen};
-    outline-offset: 0.2rem;
-    -moz-outline-radius: 100%;
+    color: ${mainGreen};
   }
   &:active,
   &:focus {
@@ -59,7 +59,7 @@ const CheckedBtn = styled.button`
 
 const RemoveBtn = styled.button`
   position: absolute;
-  bottom: -0.8rem;
+  bottom: 0.2rem;
   right: 0.8rem;
   background: none;
   outline: none;
@@ -69,7 +69,7 @@ const RemoveBtn = styled.button`
   cursor: pointer;
   transition: all 0.3s ease-out;
   &:hover {
-    color: ${mainRed};
+    color: ${lightRed};
   }
   &:active,
   &:focus {
@@ -81,7 +81,7 @@ const RemoveBtn = styled.button`
 const ClearAllBtn = styled.button`
   position: absolute;
   top: 2rem;
-  right: -4rem;
+  right: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -93,29 +93,25 @@ const ClearAllBtn = styled.button`
   cursor: pointer;
   transition: all 0.3s ease-out;
   &:hover {
-    color: ${mainRed};
+    color: ${lightRed};
   }
   &:active,
   &:focus {
     border: none;
     outline: none;
   }
-  &::after {
-    content: "Clear all";
-    display: inline-block;
-    width: 100px;
-    font-size: 1rem;
-    padding-right: 2rem;
-    transform: translateX(-80%);
-    opacity: 0;
-    color: ${mainRed};
-    transition: all 0.3s ease-out;
-  }
-  &:hover::after {
-    transform: translateX(-100%);
-    color: ${mainRed};
+
+  &:hover .clear {
     opacity: 1;
+    transform: translateX(-20%);
   }
 `;
 
-export { CheckedBtn, RemoveBtn, ClearAllBtn, AddButton };
+const ClearAll = styled.div`
+  font-size: 1rem;
+  transform: translateX(0);
+  opacity: 0;
+  transition: all 0.3s ease-out;
+`;
+
+export { CheckedBtn, RemoveBtn, ClearAllBtn, AddButton, ClearAll };

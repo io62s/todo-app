@@ -1,28 +1,13 @@
 import * as colors from "./colors";
 import styled from "styled-components";
 
-const {
-  lightGrey,
-  lightDark,
-  mainDark,
-  Darkest,
-  mainOrange,
-  mainGreen,
-  darkGreen,
-  neonGreen,
-  mainRed,
-  lightRed,
-  medRed,
-  medDarkRed,
-  darkBlueRed,
-  darkBluePurple
-} = colors;
+const { lightGrey } = colors;
 
 export const Container = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
-  background: ${darkBluePurple};
+  background: ${lightGrey};
   color: ${lightGrey};
 `;
 

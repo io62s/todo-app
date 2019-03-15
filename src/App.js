@@ -9,8 +9,8 @@ import { Container, Wrapper } from "./components/Styles/AppStyle";
 
 class App extends Component {
   state = {
-    todos: [{ id: 1, text: "draw" }, { id: 2, text: "paint" }],
-    completed: [{ id: 3, text: "code" }]
+    todos: [],
+    completed: []
   };
 
   ///add new todo

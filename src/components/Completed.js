@@ -1,13 +1,9 @@
 import React from "react";
 import * as Buttons from "./Styles/Buttons";
-import {
-  Heading3,
-  TodoWrapper,
-  TodoContainer,
-  Todo
-} from "./Styles/TodosStyle";
+import { TodoWrapper, TodoContainer, Todo } from "./Styles/CompletedStyle";
+import { Heading3 } from "./Styles/TodosStyle";
 
-const { RemoveBtn, ClearAllBtn } = Buttons;
+const { RemoveBtn, ClearAllBtn, ClearAll } = Buttons;
 
 const Completed = ({ completed, deleteCompleted, deleteAllDone }) => {
   const completedTodo = completed.length
@@ -28,13 +24,10 @@ const Completed = ({ completed, deleteCompleted, deleteAllDone }) => {
   return (
     <React.Fragment>
       <TodoWrapper>
-        {completed.length ? (
-          <Heading3>Completed</Heading3>
-        ) : (
-          <Heading3>No completed ToDo's</Heading3>
-        )}
+        {completed.length ? <Heading3>Completed</Heading3> : null}
         {completed.length > 1 ? (
           <ClearAllBtn onClick={() => deleteAllDone()}>
+            <ClearAll className="clear">Clear all</ClearAll>
             <i class="far fa-times-circle" />
           </ClearAllBtn>
         ) : null}

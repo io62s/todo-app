@@ -4,28 +4,21 @@ import elevation from "./elevation";
 
 const {
   lightGrey,
-  lightDark,
-  mainDark,
-  Darkest,
-  mainOrange,
-  mainGreen,
-  darkGreen,
-  neonGreen,
-  mainRed,
-  lightRed,
-  medRed,
-  medDarkRed,
-  darkBlueRed,
-  darkBluePurple
+
+  medRed
 } = colors;
 
 const FormWrapper = styled.div`
   width: 100%;
   height: 3rem;
   margin: 3rem auto;
-  background: ${darkBlueRed};
+  background: ${medRed};
   border-radius: 1.5rem;
-  ${elevation[2]};
+  transition: all 0.3s ease-out;
+  ${elevation[1]};
+  &:focus-within {
+    ${elevation[3]};
+  }
 `;
 
 const Form = styled.div`
@@ -38,14 +31,16 @@ const Input = styled.input`
   width: 87%;
   border: none;
   outline: none;
-  color: ${mainOrange};
+  color: ${lightGrey};
+  font-weight: 600;
   border-radius: 1.25rem;
   padding-left: 1.2rem;
-  background-color: ${darkBlueRed};
+  background-color: transparent;
   font-family: "Open Sans", sans-serif;
   font-size: 1rem;
   &::placeholder {
-    color: ${lightGrey};
+    color: #fff;
+    font-weight: 400;
   }
 `;
 

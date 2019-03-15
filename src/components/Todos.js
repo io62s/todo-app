@@ -8,7 +8,7 @@ import {
   Todo
 } from "./Styles/TodosStyle";
 
-const { CheckedBtn, RemoveBtn, ClearAllBtn } = Buttons;
+const { CheckedBtn, RemoveBtn, ClearAllBtn, ClearAll } = Buttons;
 
 const Todos = ({ todos, deleteTodo, completedTodo, deleteAll }) => {
   const todo = todos.length
@@ -33,13 +33,10 @@ const Todos = ({ todos, deleteTodo, completedTodo, deleteAll }) => {
   return (
     <React.Fragment>
       <TodoWrapper>
-        {todos.length ? (
-          <Heading3>ToDo's</Heading3>
-        ) : (
-          <Heading3>No ToDo's</Heading3>
-        )}
+        {todos.length ? <Heading3>ToDo's</Heading3> : null}
         {todos.length > 1 ? (
           <ClearAllBtn onClick={() => deleteAll()}>
+            <ClearAll className="clear">Clear all</ClearAll>
             <i className="far fa-times-circle" />
           </ClearAllBtn>
         ) : null}
