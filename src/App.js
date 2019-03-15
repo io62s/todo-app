@@ -9,7 +9,7 @@ import { Container, Wrapper } from "./components/Styles/AppStyle";
 
 class App extends Component {
   state = {
-    todos: [],
+    todos: [{ id: 1, text: "code" }],
     completed: []
   };
 

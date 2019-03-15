@@ -2,22 +2,21 @@ import styled from "styled-components";
 import * as colors from "./colors";
 import elevation from "./elevation";
 
-const {
-  lightGrey,
-
-  medRed
-} = colors;
+const { lightGrey } = colors;
 
 const FormWrapper = styled.div`
   width: 100%;
   height: 3rem;
   margin: 3rem auto;
-  background: ${medRed};
+  background-color: #08aeea;
+  background-image: linear-gradient(90deg, #08aeea 0%, #2af598 100%);
+  opacity: 0.7;
   border-radius: 1.5rem;
   transition: all 0.3s ease-out;
   ${elevation[1]};
   &:focus-within {
     ${elevation[3]};
+    opacity: 1;
   }
 `;
 
@@ -40,7 +39,8 @@ const Input = styled.input`
   font-size: 1rem;
   &::placeholder {
     color: #fff;
-    font-weight: 400;
+    font-weight: 600;
+    opacity: 0.8;
   }
 `;
 

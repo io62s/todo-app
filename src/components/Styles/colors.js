@@ -1,14 +1,14 @@
 const lightGrey = "#EEEEEE";
 const lightDark = "#9E9E9E";
-const mainDark = "#464646";
+const mainDark = "#565656";
 const Darkest = "#252525";
 const mainOrange = "#FF9800";
 const mainYellow = "#FFEB3B";
-const mainGreen = "#4CAF50";
+const mainGreen = "#2AF598";
 const darkGreen = "#388E3C";
 const neonGreen = "#76FF03";
 const mainRed = "#f44336";
-const mainBlue = "#536DFE";
+const mainBlue = "#109BCB";
 
 //alt palette
 const lightRed = "#EE4540";

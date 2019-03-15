@@ -8,7 +8,6 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   background: ${lightGrey};
-  color: ${lightGrey};
 `;
 
 export const Wrapper = styled.div`
@@ -16,5 +15,6 @@ export const Wrapper = styled.div`
   padding-top: 2rem;
   padding-bottom: 4rem;
   min-width: 450px;
+  max-width: 450px;
   min-height: 100vh;
 `;

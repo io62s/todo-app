@@ -1,18 +1,8 @@
 import * as colors from "./colors";
 import styled from "styled-components";
+import elevation from "./elevation";
 
-const {
-  lightDark,
-
-  mainOrange,
-
-  mainGreen,
-
-  neonGreen,
-
-  lightRed,
-  medRed
-} = colors;
+const { lightDark, mainGreen, lightGrey, neonGreen, lightRed } = colors;
 
 const AddButton = styled.button`
   width: 3rem;
@@ -24,8 +14,8 @@ const AddButton = styled.button`
   font-size: 1.3rem;
   outline: none;
   border: none;
-  background: ${mainOrange};
-  color: ${medRed};
+  background: ${mainGreen};
+  color: ${lightGrey};
   cursor: pointer;
   transition: all 0.2s ease-out;
   &:hover {
@@ -43,12 +33,12 @@ const CheckedBtn = styled.button`
   border: none;
   border-radius: 30px;
   -moz-outline-radius: 100%;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: ${lightDark};
   cursor: pointer;
   transition: all 0.2s ease-out;
   &:hover {
-    color: ${mainGreen};
+    color: ${neonGreen};
   }
   &:active,
   &:focus {
@@ -64,7 +54,7 @@ const RemoveBtn = styled.button`
   background: none;
   outline: none;
   border: none;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: ${lightDark};
   cursor: pointer;
   transition: all 0.3s ease-out;
