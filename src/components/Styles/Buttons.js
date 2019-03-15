@@ -1,6 +1,5 @@
 import * as colors from "./colors";
 import styled from "styled-components";
-import elevation from "./elevation";
 
 const { lightDark, mainGreen, lightGrey, neonGreen, lightRed } = colors;
 

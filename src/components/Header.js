@@ -2,7 +2,7 @@ import React from "react";
 import * as colors from "./Styles/colors";
 import styled from "styled-components";
 
-const { mainDark, lightDark } = colors;
+const { mainDark } = colors;
 
 const Header = () => {
   return (

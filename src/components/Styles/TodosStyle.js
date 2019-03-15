@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import * as colors from "./colors";
 
-const { mainBlue, lightDark, darkBlueRed, darkBluePurple } = colors;
+const { mainBlue, lightDark, darkBluePurple } = colors;
 
 const Heading3 = styled.div`
   width: 100%;
