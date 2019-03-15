@@ -18,6 +18,9 @@ const FormWrapper = styled.div`
     ${elevation[3]};
     opacity: 1;
   }
+  @media (max-width: 550px) {
+    width: 90%;
+  }
 `;
 
 const Form = styled.div`

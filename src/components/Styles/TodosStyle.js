@@ -17,6 +17,9 @@ const TodoWrapper = styled.div`
   width: 100%;
   padding: 2rem;
   color: ${mainBlue};
+  @media (max-width: 550px) {
+    width: 100%;
+  }
 `;
 
 const TodoContainer = styled.div`

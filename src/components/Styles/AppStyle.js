@@ -17,4 +17,10 @@ export const Wrapper = styled.div`
   min-width: 450px;
   max-width: 450px;
   min-height: 100vh;
+
+  @media (max-width: 550px) {
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+  }
 `;
