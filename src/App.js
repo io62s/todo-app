@@ -3,17 +3,19 @@ import AddTodo from "./components/AddTodo";
 import Header from "./components/Header";
 import Todos from "./components/Todos";
 import Completed from "./components/Completed";
-import "./App.css";
+import uuid from "uuid";
+
+import { Container, Wrapper } from "./components/Styles/AppStyle";
 
 class App extends Component {
   state = {
-    todos: [],
-    completed: []
+    todos: [{ id: 1, text: "draw" }, { id: 2, text: "paint" }],
+    completed: [{ id: 3, text: "code" }]
   };
 
   ///add new todo
   addTodos = todo => {
-    todo.id = Date.now();
+    todo.id = uuid();
 
     const todos = [...this.state.todos, todo];
 
@@ -46,13 +48,13 @@ class App extends Component {
   };
 
   ///move checked todo to completed todos list
-  completedTodo = completed => {
+  completedTodo = id => {
     const todos = this.state.todos.filter(todo => {
-      return todo.id === completed;
+      return todo.id === id;
     });
 
     const todoss = this.state.todos.filter(todo => {
-      return todo.id !== completed;
+      return todo.id !== id;
     });
 
     this.setState({
@@ -75,10 +77,11 @@ class App extends Component {
   ////////////////////////
   render() {
     return (
-      <div className="container">
-        <Header />
+      <Container>
+        <Wrapper>
+          <Header />
+          <AddTodo addTodos={this.addTodos} />
 
-        <div className="wrapper">
           <Todos
             todos={this.state.todos}
             deleteTodo={this.deleteTodo}
@@ -91,10 +94,8 @@ class App extends Component {
             deleteCompleted={this.deleteCompleted}
             deleteAllDone={this.deleteAllDone}
           />
-
-          <AddTodo addTodos={this.addTodos} />
-        </div>
-      </div>
+        </Wrapper>
+      </Container>
     );
   }
 }

@@ -1,6 +1,8 @@
 import React from "react";
+import * as Buttons from "./Styles/Buttons";
+// import moment from "moment";
 
-import moment from "moment";
+const { CheckedBtn, RemoveBtn, ClearAllBtn } = Buttons;
 
 const Todos = ({ todos, deleteTodo, completedTodo, deleteAll }) => {
   const todo = todos.length
@@ -10,13 +12,13 @@ const Todos = ({ todos, deleteTodo, completedTodo, deleteAll }) => {
             <ul>
               <li>{todo.text}</li>
             </ul>
-            <button onClick={() => completedTodo(todo.id)}>
+            <CheckedBtn onClick={() => completedTodo(todo.id)}>
               <i className="fas fa-check" />
-            </button>
-            <button onClick={() => deleteTodo(todo.id)}>
+            </CheckedBtn>
+            <RemoveBtn onClick={() => deleteTodo(todo.id)}>
               <i className="fas fa-trash-alt" />
-            </button>
-            <span>Created: {moment().calendar()}</span>
+            </RemoveBtn>
+            {/* <span>Created: {moment().calendar()}</span> */}
           </div>
         );
       })
@@ -27,9 +29,9 @@ const Todos = ({ todos, deleteTodo, completedTodo, deleteAll }) => {
       <div>
         {todos.length ? <h3>ToDo's</h3> : <h3>No ToDo's</h3>}
         {todos.length > 1 ? (
-          <button onClick={() => deleteAll()}>
-            <i class="far fa-times-circle" />
-          </button>
+          <ClearAllBtn onClick={() => deleteAll()}>
+            <i className="far fa-times-circle" />
+          </ClearAllBtn>
         ) : null}
         {todo}
       </div>

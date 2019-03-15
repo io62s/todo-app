@@ -1,4 +1,8 @@
 import React, { PureComponent } from "react";
+import * as Buttons from "./Styles/Buttons";
+import { FormWrapper, Input } from "./Styles/AddFormStyle";
+
+const { AddButton } = Buttons;
 
 class AddTodo extends PureComponent {
   state = {
@@ -31,20 +35,27 @@ class AddTodo extends PureComponent {
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <input
+      <FormWrapper>
+        <form
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center"
+          }}
+          onSubmit={this.handleSubmit}
+        >
+          <Input
             ref={input => (this.inputElement = input)}
             value={this.state.text}
             onChange={this.setValue}
             type="text"
             placeholder="Enter Task..."
           />
-          <button style={{ fontSize: "2rem" }}>
+          <AddButton>
             <i className="fas fa-plus" />
-          </button>
+          </AddButton>
         </form>
-      </div>
+      </FormWrapper>
     );
   }
 }

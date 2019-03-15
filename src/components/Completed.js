@@ -1,4 +1,7 @@
 import React from "react";
+import * as Buttons from "./Styles/Buttons";
+
+const { RemoveBtn, ClearAllBtn } = Buttons;
 
 const Completed = ({ completed, deleteCompleted, deleteAllDone }) => {
   const completedTodo = completed.length
@@ -8,9 +11,9 @@ const Completed = ({ completed, deleteCompleted, deleteAllDone }) => {
             <ul>
               <li>{todo.text}</li>
             </ul>
-            <button onClick={() => deleteCompleted(todo.id)}>
+            <RemoveBtn onClick={() => deleteCompleted(todo.id)}>
               <i className="fas fa-trash-alt" />
-            </button>
+            </RemoveBtn>
           </div>
         );
       })
@@ -21,9 +24,9 @@ const Completed = ({ completed, deleteCompleted, deleteAllDone }) => {
       <div>
         {completed.length ? <h3>Completed</h3> : <h3>No completed ToDo's</h3>}
         {completed.length > 1 ? (
-          <button onClick={() => deleteAllDone()}>
+          <ClearAllBtn onClick={() => deleteAllDone()}>
             <i class="far fa-times-circle" />
-          </button>
+          </ClearAllBtn>
         ) : null}
 
         {completedTodo}
