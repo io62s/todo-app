@@ -28,7 +28,7 @@ const Completed = ({ completed, deleteCompleted, deleteAllDone }) => {
         {completed.length > 1 ? (
           <ClearAllBtn onClick={() => deleteAllDone()}>
             <ClearAll className="clear">Clear all</ClearAll>
-            <i class="far fa-times-circle" />
+            <i className="far fa-times-circle" />
           </ClearAllBtn>
         ) : null}
 

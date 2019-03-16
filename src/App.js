@@ -3,9 +3,10 @@ import AddTodo from "./components/AddTodo";
 import Header from "./components/Header";
 import Todos from "./components/Todos";
 import Completed from "./components/Completed";
-import uuid from "uuid";
 
 import { Container, Wrapper } from "./components/Styles/AppStyle";
+
+const uuidv4 = require("uuid/v4");
 
 class App extends Component {
   state = {
@@ -15,12 +16,12 @@ class App extends Component {
 
   ///add new todo
   addTodos = todo => {
-    todo.id = uuid();
+    todo.id = uuidv4();
 
     const todos = [...this.state.todos, todo];
 
-    this.setState({
-      todos
+    this.setState(() => {
+      return { todos };
     });
   };
 
@@ -30,8 +31,8 @@ class App extends Component {
       return todo.id !== id;
     });
 
-    this.setState({
-      todos
+    this.setState(() => {
+      return { todos };
     });
   };
 
@@ -56,10 +57,11 @@ class App extends Component {
     const todoss = this.state.todos.filter(todo => {
       return todo.id !== id;
     });
-
-    this.setState({
-      todos: todoss,
-      completed: this.state.completed.concat(todos)
+    this.setState(() => {
+      return {
+        todos: todoss,
+        completed: this.state.completed.concat(todos)
+      };
     });
   };
   ///clear list/////////////
