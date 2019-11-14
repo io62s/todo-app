@@ -92,6 +92,7 @@ const ClearAllBtn = styled.button`
 
   &:hover .clear {
     opacity: 1;
+    pointer-events: none;
     transform: translateX(-20%);
   }
 `;
@@ -100,6 +101,7 @@ const ClearAll = styled.div`
   font-size: 1rem;
   transform: translateX(0);
   opacity: 0;
+pointer-events: none;
   transition: all 0.3s ease-out;
 `;
 
